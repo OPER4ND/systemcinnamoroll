@@ -1,0 +1,872 @@
+/* main.css */
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+@font-face {
+    font-family: 'asciid';
+    font-style: normal;
+    font-weight: 400;
+    src:
+        local('asciid'),
+        url('https://refact0r.github.io/system24/assets/asciid.woff') format('woff');
+}
+
+body {
+    /* variant options */
+    --systemcinnamoroll-variant: var(--systemcinnamoroll-user-variant, cinnamoroll); /* cinnamoroll, strawberry-milk, matcha-milk */
+
+    /* font, change to '' for default discord font */
+    --font: 'DM Mono'; /* change to '' for default discord font */
+    --code-font: 'DM Mono'; /* change to '' for default discord font */
+    font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+    /* window controls */
+    --custom-window-controls: off; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+    /* background image options */
+    --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
+    --background-image-url: url(''); /* url of the background image */
+
+    /* transparency/blur options */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+    --panel-blur: off; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+    /* unrounding options */
+    --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+    /* styling options */
+    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+    --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+    --loader-gap: 20px;
+    --loader-art:
+        '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     ';
+    --loader-gradient: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+
+    /* panel labels */
+    --panel-labels: on; /* off: default, on: add labels to panels */
+    --label-color: var(--text-muted); /* color of labels */
+    --label-font-weight: 500; /* font weight of labels */
+}
+
+/* color options */
+:root {
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+    /* text colors */
+    --text-0: hsl(210deg 38% 24%); /* text on colored elements */
+    --text-1: hsl(210deg 34% 28%); /* other normally white text */
+    --text-2: hsl(209deg 30% 37%); /* headings and important text */
+    --text-3: hsl(209deg 26% 45%); /* normal text */
+    --text-4: hsl(208deg 20% 55%); /* icon buttons and channels */
+    --text-5: hsl(207deg 16% 63%); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: hsl(205deg 48% 86%); /* dark buttons when clicked */
+    --bg-2: hsl(205deg 54% 90%); /* dark buttons */
+    --bg-3: hsl(204deg 60% 94%); /* spacing, secondary elements */
+    --bg-4: #ecf5fa; /* main background color */
+    --hover: hsl(203deg 72% 72% / 0.2); /* channels and buttons when hovered */
+    --active: hsl(203deg 70% 68% / 0.3); /* channels and buttons when clicked or selected */
+    --active-2: hsl(203deg 65% 63% / 0.4); /* extra state for transparent buttons */
+    --message-hover: hsl(203deg 78% 75% / 0.16); /* messages when hovered */
+
+    /* accent colors */
+    --accent-1: hsl(202deg 64% 47%); /* links and other accent text */
+    --accent-2: hsl(202deg 70% 73%); /* small accent elements */
+    --accent-3: hsl(202deg 64% 67%); /* accent buttons */
+    --accent-4: hsl(202deg 58% 60%); /* accent buttons when hovered */
+    --accent-5: hsl(202deg 52% 54%); /* accent buttons when clicked */
+    --accent-new: hsl(336deg 56% 78%); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* status indicator colors */
+    --online: hsl(153deg 44% 73%); /* change to #40a258 for default */
+    --dnd: hsl(336deg 58% 79%); /* change to #d83a41 for default */
+    --idle: hsl(46deg 76% 78%); /* change to #cc954c for default */
+    --streaming: hsl(258deg 47% 79%); /* change to ##9147ff for default */
+    --offline: hsl(212deg 24% 63%); /* change to #82838b for default offline color */
+
+    /* border colors */
+    --border-light: hsl(204deg 46% 74% / 0.26); /* general light border color */
+    --border: hsl(203deg 44% 66% / 0.34); /* general normal border color */
+    --border-hover: var(--accent-2); /* border color of panels when hovered */
+    --button-border: hsl(204deg 47% 65% / 0.3); /* neutral border color of buttons */
+
+    /* base colors */
+    --red-1: hsl(337deg 63% 87%);
+    --red-2: hsl(336deg 58% 80%);
+    --red-3: hsl(336deg 52% 74%);
+    --red-4: hsl(336deg 48% 67%);
+    --red-5: hsl(336deg 43% 60%);
+
+    --green-1: hsl(154deg 43% 83%);
+    --green-2: hsl(153deg 44% 73%);
+    --green-3: hsl(153deg 40% 66%);
+    --green-4: hsl(154deg 35% 59%);
+    --green-5: hsl(154deg 30% 51%);
+
+    --blue-1: hsl(203deg 76% 90%);
+    --blue-2: hsl(202deg 70% 73%);
+    --blue-3: hsl(202deg 62% 65%);
+    --blue-4: hsl(202deg 55% 58%);
+    --blue-5: hsl(202deg 49% 51%);
+
+    --yellow-1: hsl(47deg 82% 87%);
+    --yellow-2: hsl(46deg 76% 78%);
+    --yellow-3: hsl(45deg 69% 71%);
+    --yellow-4: hsl(44deg 61% 64%);
+    --yellow-5: hsl(43deg 53% 57%);
+
+    --purple-1: hsl(257deg 59% 89%);
+    --purple-2: hsl(258deg 47% 79%);
+    --purple-3: hsl(259deg 43% 72%);
+    --purple-4: hsl(259deg 37% 65%);
+    --purple-5: hsl(259deg 32% 58%);
+
+    /* keep discord tokenized surfaces (including call area) on the light palette */
+    --background-base-low: var(--bg-4);
+    --background-base-lower: var(--bg-3);
+    --background-base-lowest: var(--bg-2);
+    --background-primary: var(--bg-4);
+    --background-secondary: var(--bg-3);
+    --background-secondary-alt: var(--bg-2);
+    --background-tertiary: var(--bg-2);
+    --background-floating: var(--bg-2);
+    --channeltextarea-background: var(--bg-3);
+    --modal-background: var(--bg-2);
+    --modal-footer-background: var(--bg-1);
+    --background-modifier-hover: var(--hover);
+    --background-modifier-active: var(--active);
+    --background-modifier-selected: var(--active);
+    --interactive-normal: var(--text-2);
+    --interactive-hover: var(--text-1);
+    --interactive-active: var(--text-0);
+    --interactive-muted: var(--text-5);
+    --text-normal: var(--text-2);
+    --text-muted: var(--text-4);
+    --header-primary: var(--text-1);
+    --header-secondary: var(--text-3);
+    --icon-primary: var(--text-1);
+    --icon-secondary: var(--text-3);
+}
+
+body {
+    --custom-chatbar: separated !important; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
+    --chatbar-height: 56px !important; /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
+    --chat-main-overlay: rgb(236 245 250 / 0.78);
+    --chat-main-image: url('../assets/cinnamoroll.jpg');
+    --stream-paused-text-color: var(--background-base-low);
+}
+
+.visual-refresh {
+    .bg__960e4 {
+        background: var(--background-base-low);
+    }
+    .container__01ae2 {
+        background-color: var(--background-base-low);
+    }
+    .callContainer_cb9592,
+    [class*='callContainer'],
+    [class*='voiceCallWrapper'] {
+        background: var(--background-base-low) !important;
+    }
+    [class*='videoGridWrapper'],
+    [class*='videoGrid'],
+    [class*='streamPreview'],
+    [class*='participantsWrapper'],
+    [class*='callBackground'] {
+        background-color: var(--background-base-low) !important;
+    }
+    [class*='callContainer'] [class*='button'],
+    [class*='voiceCallWrapper'] [class*='button'] {
+        color: var(--text-1) !important;
+    }
+    [class*='callContainer'] [class*='pause'] [class*='text'],
+    [class*='callContainer'] [class*='pause'] [class*='title'],
+    [class*='callContainer'] [class*='pause'] [class*='subtitle'],
+    [class*='callContainer'] [class*='pause'] [class*='message'],
+    [class*='callContainer'] [class*='pause'] [class*='description'],
+    [class*='callContainer'] [class*='pause'] span,
+    [class*='callContainer'] [class*='pause'] p,
+    [class*='callContainer'] [class*='paused'] [class*='text'],
+    [class*='callContainer'] [class*='paused'] [class*='title'],
+    [class*='callContainer'] [class*='paused'] [class*='subtitle'],
+    [class*='callContainer'] [class*='paused'] [class*='message'],
+    [class*='callContainer'] [class*='paused'] [class*='description'],
+    [class*='callContainer'] [class*='paused'] span,
+    [class*='callContainer'] [class*='paused'] p {
+        background: transparent !important;
+        outline: none !important;
+        color: var(--stream-paused-text-color) !important;
+        text-shadow: none !important;
+    }
+    [class*='streamPreview'] [class*='overlay'] [class*='text'],
+    [class*='streamPreview'] [class*='overlay'] [class*='title'],
+    [class*='streamPreview'] [class*='overlay'] [class*='subtitle'],
+    [class*='streamPreview'] [class*='overlay'] [class*='message'],
+    [class*='streamPreview'] [class*='overlay'] [class*='description'],
+    [class*='streamPreview'] [class*='overlay'] span,
+    [class*='streamPreview'] [class*='overlay'] p,
+    [class*='streamPreview'] [class*='scrim'] [class*='text'],
+    [class*='streamPreview'] [class*='scrim'] [class*='title'],
+    [class*='streamPreview'] [class*='scrim'] [class*='subtitle'],
+    [class*='streamPreview'] [class*='scrim'] [class*='message'],
+    [class*='streamPreview'] [class*='scrim'] [class*='description'],
+    [class*='streamPreview'] [class*='scrim'] span,
+    [class*='streamPreview'] [class*='scrim'] p {
+        background: transparent !important;
+        outline: none !important;
+        color: var(--stream-paused-text-color) !important;
+        text-shadow: none !important;
+    }
+    .messagesWrapper__36d07 {
+        background:
+            linear-gradient(var(--chat-main-overlay), var(--chat-main-overlay)),
+            var(--chat-main-image) center / cover no-repeat !important;
+    }
+    .container__37e49 {
+        padding: 8px;
+    }
+}
+
+/* ascii.css */
+@property --ascii-titles {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--ascii-titles: on) {
+    h3[data-text-variant='heading-xxl/extrabold'] {
+        font-family: 'asciid';
+        font-size: 50px;
+        font-weight: 400;
+    }
+}
+
+@property --ascii-loader {
+    syntax: 'off | system24 | cats';
+    inherits: false;
+    initial-value: system24;
+}
+
+@container body style(--ascii-loader: system24) {
+    .content_a2f514 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--loader-gap, 20px);
+    }
+    .content_a2f514 > .spinner_a2f514 {
+        display: none;
+    }
+    .content_a2f514::before {
+        display: block;
+        content: var(
+            --loader-art,
+            '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     '
+        );
+        font-size: 18px;
+        font-family: monospace;
+        white-space: pre;
+        line-height: 1.2;
+        background: var(
+            --loader-gradient,
+            linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: textShine 1.5s linear infinite reverse;
+    }
+    .text_a2f514 {
+        position: static;
+    }
+
+    @keyframes textShine {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        50.0001% {
+            background-position: -100%, 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+@container body style(--ascii-loader: cats) {
+    .content_a2f514 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        position: static;
+    }
+    .content_a2f514 > .spinner_a2f514 {
+        display: none;
+    }
+    .content_a2f514::before {
+        display: block;
+        content: url('https://raw.githubusercontent.com/refact0r/system24/refs/heads/main/assets/cats.gif');
+    }
+    .text_a2f514 {
+        position: static;
+    }
+}
+
+/* colors.css */
+@container root style(--colors: on) {
+    #app-mount .wrapper__44b0c,
+    #app-mount .container__1ce5d {
+        --online-2: var(--online);
+        --dnd-2: var(--dnd);
+        --idle-2: var(--idle);
+        --offline-2: var(--offline);
+        --streaming-2: var(--streaming);
+    }
+}
+
+/* panel-labels.css */
+body {
+    --label-color: var(--text-muted);
+    --label-hover-color: var(--brand-360);
+    --label-font-weight: 500;
+}
+
+@property --panel-labels {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--panel-labels: on) {
+    .visual-refresh {
+        .guilds__5e434,
+        .panels__5e434,
+        .sidebarList__5e434,
+        .subtitleContainer_f75fb0,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0,
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .container_c8ffbb,
+        .container__133bf > .container__9293f,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf,
+        .container__01ae2 > .container__9293f,
+        .callContainer_cb9592 {
+            &::after {
+                display: block;
+                color: var(--label-color);
+                font-weight: var(--label-font-weight);
+                position: absolute;
+                top: -10px;
+                left: 8px;
+                background-color: var(--background-base-low);
+                padding: 0 4px;
+                z-index: 100;
+                font-size: 16px;
+                transition: color var(--border-hover-transition);
+            }
+
+            &:hover::after {
+                color: var(--label-hover-color);
+            }
+        }
+
+        .guilds__5e434::after {
+            content: 'nav';
+        }
+        .panels__5e434::after {
+            content: 'user';
+        }
+        .sidebarList__5e434::after {
+            content: 'channels';
+        }
+        .subtitleContainer_f75fb0::after {
+            content: 'channel';
+        }
+        .messagesWrapper__36d07::after {
+            content: 'chat';
+        }
+        .channelTextArea_f75fb0::after {
+            content: 'input';
+        }
+        .container_c8ffbb::after,
+        .content_f75fb0 > .membersWrap_c8ffbb::after {
+            content: 'members';
+        }
+        .container__133bf > .container__9293f:after {
+            content: 'friends';
+        }
+        .peopleColumn__133bf::after {
+            content: 'list';
+        }
+        .nowPlayingColumn__133bf::after {
+            content: 'activity';
+        }
+        .container__01ae2 > .container__9293f::after {
+            content: 'thread';
+        }
+        .callContainer_cb9592::after {
+            content: 'vc';
+        }
+
+        .content_f75fb0 > .membersWrap_c8ffbb,
+        .panels__5e434,
+        .sidebar__5e434,
+        .sidebarList__5e434,
+        .chat_f75fb0,
+        .page__5e434,
+        .channelTextArea_f75fb0,
+        .container__133bf,
+        .container_c8ffbb,
+        .guilds__5e434,
+        .peopleColumn__133bf,
+        .tabBody__133bf,
+        .container__01ae2,
+        .chatContent_f75fb0,
+        .messagesWrapper__36d07 {
+            overflow: visible !important;
+        }
+        .page__5e434,
+        .tabBody__133bf {
+            min-height: 0;
+        }
+        .peopleColumn__133bf {
+            min-width: 0;
+        }
+        .sidebarList__5e434,
+        .container_c8ffbb,
+        .peopleColumn__133bf,
+        .nowPlayingColumn__133bf,
+        .messagesWrapper__36d07,
+        .channelTextArea_f75fb0 {
+            position: relative;
+        }
+
+        .scroller__36d07 {
+            top: 8px;
+        }
+        .membersWrap_c8ffbb {
+            height: calc(100% - 8px);
+        }
+
+        .scroller_ef3116 {
+            padding-top: calc(var(--custom-guild-list-padding) - 8px);
+        }
+
+        .animatedContainer_f37cb1,
+        .headerGlass_f37cb1 {
+            left: 8px;
+            right: 8px;
+            width: auto;
+        }
+        .header_f37cb1 {
+            margin: 0 8px;
+        }
+        .container__2637a {
+            overflow: hidden;
+        }
+
+        .headerEllipseForeground_f37cb1 {
+            display: none;
+        }
+
+        .callContainer_cb9592 {
+            padding: 8px;
+        }
+
+        .messagesWrapper__36d07 {
+            mask: none !important;
+        }
+    }
+}
+
+/* spotify-bar.css */
+@property --custom-spotify-bar {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--custom-spotify-bar: on) {
+    .visual-refresh {
+        /* text-like spotify progress bar */
+        #vc-spotify-progress-bar {
+            margin: 8px 0 0 0;
+        }
+        .vc-spotify-button-row {
+            margin-top: 8px;
+        }
+        #app-mount #vc-spotify-progress-bar .bar_a562c8 {
+            height: 22px !important;
+            top: 0 !important;
+            background-color: var(--background-surface-high);
+        }
+        #app-mount #vc-spotify-progress-bar .barFill_a562c8 {
+            height: 22px !important;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left,
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            z-index: 1;
+            top: 0;
+            margin-top: 0;
+            mix-blend-mode: difference;
+            font-size: 16px;
+            line-height: 22px;
+            pointer-events: none;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-left {
+            left: 6px;
+        }
+        #vc-spotify-progress-bar .vc-spotify-time-right {
+            right: 6px;
+        }
+        #vc-spotify-progress-bar .grabber_a562c8 {
+            visibility: hidden;
+        }
+    }
+}
+
+/* unrounding.css */
+@property --unrounding {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+
+@container body style(--unrounding: on) {
+    *,
+    *::before,
+    *::after {
+        border-radius: 0 !important;
+    }
+
+    .svg_cc5dd2 > mask,
+    .svg__44b0c > rect,
+    .svg__44b0c > circle,
+    .svg__44b0c > g,
+    .svg__44b0c rect[mask='url(#:rhi:)'],
+    .avatar__20a53 .status_a423bd {
+        display: none;
+    }
+
+    .mask__68edb > foreignObject,
+    .svg__44b0c > foreignObject,
+    .svg__2338f > foreignObject {
+        mask: none;
+    }
+
+    .wrapper__44b0c,
+    .container__1ce5d {
+        --online-2: #43a25a;
+        --dnd-2: #d83a41;
+        --idle-2: #ca9654;
+        --offline-2: #82838b;
+        --streaming-2: #9147ff;
+    }
+    .wrapper__44b0c:has(rect)::after,
+    .container__1ce5d:has(.status_a423bd)::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        bottom: -4px;
+        right: -4px;
+        border: 2px solid var(--background-base-lower);
+    }
+    .wrapper__44b0c:has(rect[fill='#45a366'])::after,
+    .container__1ce5d:has(.status_a423bd[style='background-color: rgb(67, 162, 90);'])::after {
+        background: var(--online-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#da3e44'])::after {
+        background: var(--dnd-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#ffc04e'])::after {
+        background: var(--idle-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#84858d'])::after {
+        background: var(--offline-2) !important;
+    }
+    .wrapper__44b0c:has(rect[fill='#9147ff'])::after {
+        background: var(--streaming-2);
+    }
+
+    .lowerBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        bottom: -4px;
+        right: -4px;
+    }
+    .upperBadge_cc5dd2 {
+        border: 2px solid var(--background-base-lower);
+        top: -4px;
+        right: -4px;
+    }
+    .folderGroup__48112.isExpanded__48112 > .stack_dbd263 {
+        overflow: visible !important;
+    }
+
+    .slider__3f21e > rect[rx='10'] {
+        rx: 0 !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 0 !important;
+    }
+}
+
+/* variants.css */
+@property --systemcinnamoroll-variant {
+    syntax: 'cinnamoroll | strawberry-milk | matcha-milk';
+    inherits: true;
+    initial-value: cinnamoroll;
+}
+
+@container root style(--systemcinnamoroll-variant: cinnamoroll) {
+    :root {
+        --text-0: hsl(210deg 38% 24%);
+        --text-1: hsl(210deg 34% 28%);
+        --text-2: hsl(209deg 30% 37%);
+        --text-3: hsl(209deg 26% 45%);
+        --text-4: hsl(208deg 20% 55%);
+        --text-5: hsl(207deg 16% 63%);
+        --bg-1: hsl(205deg 48% 86%);
+        --bg-2: hsl(205deg 54% 90%);
+        --bg-3: hsl(204deg 60% 94%);
+        --bg-4: hsl(202deg 56% 96%);
+        --hover: hsl(203deg 72% 72% / 0.2);
+        --active: hsl(203deg 70% 68% / 0.3);
+        --active-2: hsl(203deg 65% 63% / 0.4);
+        --message-hover: hsl(203deg 78% 75% / 0.16);
+        --accent-1: hsl(202deg 64% 47%);
+        --accent-2: hsl(202deg 70% 73%);
+        --accent-3: hsl(202deg 64% 67%);
+        --accent-4: hsl(202deg 58% 60%);
+        --accent-5: hsl(202deg 52% 54%);
+        --accent-new: hsl(336deg 56% 78%);
+        --online: hsl(153deg 44% 73%);
+        --dnd: hsl(336deg 58% 79%);
+        --idle: hsl(46deg 76% 78%);
+        --streaming: hsl(258deg 47% 79%);
+        --offline: hsl(212deg 24% 63%);
+        --border-light: hsl(204deg 46% 74% / 0.26);
+        --border: hsl(203deg 44% 66% / 0.34);
+        --button-border: hsl(204deg 47% 65% / 0.3);
+        --red-1: hsl(337deg 63% 87%);
+        --red-2: hsl(336deg 58% 80%);
+        --red-3: hsl(336deg 52% 74%);
+        --red-4: hsl(336deg 48% 67%);
+        --red-5: hsl(336deg 43% 60%);
+        --green-1: hsl(154deg 43% 83%);
+        --green-2: hsl(153deg 44% 73%);
+        --green-3: hsl(153deg 40% 66%);
+        --green-4: hsl(154deg 35% 59%);
+        --green-5: hsl(154deg 30% 51%);
+        --blue-1: hsl(203deg 76% 90%);
+        --blue-2: hsl(202deg 70% 73%);
+        --blue-3: hsl(202deg 62% 65%);
+        --blue-4: hsl(202deg 55% 58%);
+        --blue-5: hsl(202deg 49% 51%);
+        --yellow-1: hsl(47deg 82% 87%);
+        --yellow-2: hsl(46deg 76% 78%);
+        --yellow-3: hsl(45deg 69% 71%);
+        --yellow-4: hsl(44deg 61% 64%);
+        --yellow-5: hsl(43deg 53% 57%);
+        --purple-1: hsl(257deg 59% 89%);
+        --purple-2: hsl(258deg 47% 79%);
+        --purple-3: hsl(259deg 43% 72%);
+        --purple-4: hsl(259deg 37% 65%);
+        --purple-5: hsl(259deg 32% 58%);
+    }
+}
+
+@container root style(--systemcinnamoroll-variant: strawberry-milk) {
+    :root {
+        --text-0: hsl(345deg 34% 25%);
+        --text-1: hsl(343deg 30% 31%);
+        --text-2: hsl(343deg 25% 40%);
+        --text-3: hsl(343deg 19% 49%);
+        --text-4: hsl(343deg 14% 58%);
+        --text-5: hsl(342deg 11% 66%);
+        --bg-1: hsl(342deg 55% 88%);
+        --bg-2: hsl(343deg 62% 92%);
+        --bg-3: hsl(344deg 71% 95%);
+        --bg-4: hsl(350deg 100% 98%);
+        --hover: hsl(338deg 76% 73% / 0.18);
+        --active: hsl(338deg 72% 68% / 0.28);
+        --active-2: hsl(338deg 66% 62% / 0.38);
+        --message-hover: hsl(338deg 74% 73% / 0.14);
+        --accent-1: hsl(336deg 63% 58%);
+        --accent-2: hsl(337deg 73% 76%);
+        --accent-3: hsl(337deg 64% 69%);
+        --accent-4: hsl(337deg 58% 62%);
+        --accent-5: hsl(337deg 52% 56%);
+        --accent-new: hsl(18deg 74% 76%);
+        --online: hsl(151deg 39% 68%);
+        --dnd: hsl(2deg 69% 74%);
+        --idle: hsl(35deg 77% 74%);
+        --streaming: hsl(279deg 43% 73%);
+        --offline: hsl(341deg 14% 62%);
+        --border-light: hsl(338deg 42% 76% / 0.24);
+        --border: hsl(338deg 39% 67% / 0.32);
+        --button-border: hsl(338deg 37% 67% / 0.28);
+        --red-1: hsl(2deg 84% 88%);
+        --red-2: hsl(2deg 75% 79%);
+        --red-3: hsl(2deg 66% 72%);
+        --red-4: hsl(2deg 57% 65%);
+        --red-5: hsl(2deg 50% 58%);
+        --green-1: hsl(152deg 43% 83%);
+        --green-2: hsl(151deg 39% 68%);
+        --green-3: hsl(151deg 35% 61%);
+        --green-4: hsl(151deg 30% 54%);
+        --green-5: hsl(151deg 26% 47%);
+        --blue-1: hsl(205deg 79% 91%);
+        --blue-2: hsl(204deg 69% 74%);
+        --blue-3: hsl(204deg 61% 66%);
+        --blue-4: hsl(204deg 52% 58%);
+        --blue-5: hsl(204deg 45% 51%);
+        --yellow-1: hsl(45deg 86% 88%);
+        --yellow-2: hsl(35deg 77% 74%);
+        --yellow-3: hsl(34deg 68% 67%);
+        --yellow-4: hsl(34deg 59% 60%);
+        --yellow-5: hsl(34deg 52% 53%);
+        --purple-1: hsl(285deg 54% 88%);
+        --purple-2: hsl(279deg 43% 73%);
+        --purple-3: hsl(277deg 38% 66%);
+        --purple-4: hsl(275deg 33% 59%);
+        --purple-5: hsl(273deg 28% 52%);
+    }
+}
+
+@container root style(--systemcinnamoroll-variant: matcha-milk) {
+    :root {
+        --text-0: hsl(142deg 21% 24%);
+        --text-1: hsl(142deg 19% 29%);
+        --text-2: hsl(142deg 17% 37%);
+        --text-3: hsl(142deg 13% 45%);
+        --text-4: hsl(142deg 10% 55%);
+        --text-5: hsl(142deg 9% 63%);
+        --bg-1: hsl(110deg 33% 86%);
+        --bg-2: hsl(111deg 39% 90%);
+        --bg-3: hsl(112deg 45% 94%);
+        --bg-4: hsl(115deg 54% 97%);
+        --hover: hsl(137deg 37% 62% / 0.18);
+        --active: hsl(137deg 34% 56% / 0.28);
+        --active-2: hsl(137deg 31% 50% / 0.36);
+        --message-hover: hsl(137deg 39% 63% / 0.14);
+        --accent-1: hsl(145deg 33% 44%);
+        --accent-2: hsl(144deg 38% 66%);
+        --accent-3: hsl(144deg 34% 59%);
+        --accent-4: hsl(144deg 30% 52%);
+        --accent-5: hsl(144deg 27% 46%);
+        --accent-new: hsl(18deg 68% 72%);
+        --online: hsl(155deg 38% 64%);
+        --dnd: hsl(5deg 62% 71%);
+        --idle: hsl(43deg 71% 71%);
+        --streaming: hsl(248deg 34% 72%);
+        --offline: hsl(142deg 10% 60%);
+        --border-light: hsl(144deg 27% 70% / 0.22);
+        --border: hsl(144deg 23% 61% / 0.3);
+        --button-border: hsl(144deg 21% 61% / 0.26);
+        --red-1: hsl(10deg 77% 86%);
+        --red-2: hsl(10deg 68% 77%);
+        --red-3: hsl(10deg 60% 69%);
+        --red-4: hsl(10deg 52% 62%);
+        --red-5: hsl(10deg 44% 55%);
+        --green-1: hsl(144deg 42% 82%);
+        --green-2: hsl(144deg 38% 66%);
+        --green-3: hsl(144deg 33% 58%);
+        --green-4: hsl(144deg 28% 51%);
+        --green-5: hsl(144deg 24% 45%);
+        --blue-1: hsl(190deg 52% 89%);
+        --blue-2: hsl(188deg 43% 73%);
+        --blue-3: hsl(187deg 37% 65%);
+        --blue-4: hsl(186deg 31% 57%);
+        --blue-5: hsl(185deg 27% 50%);
+        --yellow-1: hsl(51deg 79% 86%);
+        --yellow-2: hsl(43deg 71% 71%);
+        --yellow-3: hsl(42deg 63% 64%);
+        --yellow-4: hsl(41deg 55% 57%);
+        --yellow-5: hsl(40deg 48% 50%);
+        --purple-1: hsl(258deg 44% 86%);
+        --purple-2: hsl(248deg 34% 72%);
+        --purple-3: hsl(247deg 30% 65%);
+        --purple-4: hsl(246deg 26% 58%);
+        --purple-5: hsl(245deg 22% 51%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: cinnamoroll) {
+    body {
+        --loader-gap: 20px;
+        --loader-art:
+            '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     ';
+        --loader-gradient: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: strawberry-milk) {
+    body {
+        --loader-gap: 24px;
+        --loader-art:
+            '  _________ __                       __                           __      __\A /   _____//  |____________ __  _  _/  |__   ___________________  \\/ __ _/  |_\A \\_____  \\\\   __\\_  __ \\__  \\\\ \\/ \\/ /   __\\berry /     \\_  __ \\\\   __\\\\   __\\\A /        \\|  |  |  | \\// __ \\\\     /|  |  / /milk  |  Y Y  \\  | \\/ |  |   |  |\A/_______  /|__|  |__|  (____  /\\/\\_/ |__| /_/       |__|_|  /__|    |__|   |__|\A        \\/                  \\/                                \\/                    ';
+        --loader-gradient: linear-gradient(to right, hsl(338deg 82% 78%) 0%, hsl(12deg 88% 83%) 50%, hsl(338deg 82% 78%) 100%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: matcha-milk) {
+    body {
+        --loader-gap: 24px;
+        --loader-art:
+            '                           __         .__               __      __\A  _____ _____ _/  |_  ____ |  |__ _____    _____   _____/  |__ _/  |_\A /     \\\\__  \\\\   __\\/ ___\\|  |  \\\\__  \\  /     \\_/ ___\\   __\\\\   __\\\A|  Y Y  \\/ __ \\|  | \\  \\___|   Y  \\/ __ \\|  Y Y  \\  \\___|  |   |  |\A|__|_|  (____  /__|  \\___  >___|  (____  /__|_|  /\\___  >__|   |__|\A      \\/     \\/          \\/     \\/     \\/      \\/     \\/              ';
+        --loader-gradient: linear-gradient(to right, hsl(144deg 34% 60%) 0%, hsl(184deg 32% 72%) 50%, hsl(144deg 34% 60%) 100%);
+    }
+}
+

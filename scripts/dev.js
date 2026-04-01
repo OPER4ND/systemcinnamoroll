@@ -5,8 +5,8 @@ const chokidar = require('chokidar');
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
 // File and directory paths
-const baseFile = path.join(__dirname, '..', '/theme/system24.theme.css');
-const buildFile = path.join(__dirname, '..', '/build/system24.css');
+const baseFile = path.join(__dirname, '..', '/theme/systemcinnamoroll.theme.css');
+const buildFile = path.join(__dirname, '..', '/build/systemcinnamoroll.css');
 const srcDir = path.join(__dirname, '..', '/src');
 const outputPaths = process.env.DEV_OUTPUT_PATH ? process.env.DEV_OUTPUT_PATH.split(',') : [];
 
