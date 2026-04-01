@@ -1,0 +1,206 @@
+@property --systemcinnamoroll-variant {
+    syntax: 'cinnamoroll | strawberry-milk | matcha-milk';
+    inherits: true;
+    initial-value: cinnamoroll;
+}
+
+@container root style(--systemcinnamoroll-variant: cinnamoroll) {
+    :root {
+        --text-0: hsl(210deg 38% 24%);
+        --text-1: hsl(210deg 34% 28%);
+        --text-2: hsl(209deg 30% 37%);
+        --text-3: hsl(209deg 26% 45%);
+        --text-4: hsl(208deg 20% 55%);
+        --text-5: hsl(207deg 16% 63%);
+        --bg-1: hsl(205deg 48% 86%);
+        --bg-2: hsl(205deg 54% 90%);
+        --bg-3: hsl(204deg 60% 94%);
+        --bg-4: hsl(202deg 56% 96%);
+        --hover: hsl(203deg 72% 72% / 0.2);
+        --active: hsl(203deg 70% 68% / 0.3);
+        --active-2: hsl(203deg 65% 63% / 0.4);
+        --message-hover: hsl(203deg 78% 75% / 0.16);
+        --accent-1: hsl(202deg 64% 47%);
+        --accent-2: hsl(202deg 70% 73%);
+        --accent-3: hsl(202deg 64% 67%);
+        --accent-4: hsl(202deg 58% 60%);
+        --accent-5: hsl(202deg 52% 54%);
+        --accent-new: hsl(336deg 56% 78%);
+        --online: hsl(153deg 44% 73%);
+        --dnd: hsl(336deg 58% 79%);
+        --idle: hsl(46deg 76% 78%);
+        --streaming: hsl(258deg 47% 79%);
+        --offline: hsl(212deg 24% 63%);
+        --border-light: hsl(204deg 46% 74% / 0.26);
+        --border: hsl(203deg 44% 66% / 0.34);
+        --button-border: hsl(204deg 47% 65% / 0.3);
+        --red-1: hsl(337deg 63% 87%);
+        --red-2: hsl(336deg 58% 80%);
+        --red-3: hsl(336deg 52% 74%);
+        --red-4: hsl(336deg 48% 67%);
+        --red-5: hsl(336deg 43% 60%);
+        --green-1: hsl(154deg 43% 83%);
+        --green-2: hsl(153deg 44% 73%);
+        --green-3: hsl(153deg 40% 66%);
+        --green-4: hsl(154deg 35% 59%);
+        --green-5: hsl(154deg 30% 51%);
+        --blue-1: hsl(203deg 76% 90%);
+        --blue-2: hsl(202deg 70% 73%);
+        --blue-3: hsl(202deg 62% 65%);
+        --blue-4: hsl(202deg 55% 58%);
+        --blue-5: hsl(202deg 49% 51%);
+        --yellow-1: hsl(47deg 82% 87%);
+        --yellow-2: hsl(46deg 76% 78%);
+        --yellow-3: hsl(45deg 69% 71%);
+        --yellow-4: hsl(44deg 61% 64%);
+        --yellow-5: hsl(43deg 53% 57%);
+        --purple-1: hsl(257deg 59% 89%);
+        --purple-2: hsl(258deg 47% 79%);
+        --purple-3: hsl(259deg 43% 72%);
+        --purple-4: hsl(259deg 37% 65%);
+        --purple-5: hsl(259deg 32% 58%);
+    }
+}
+
+@container root style(--systemcinnamoroll-variant: strawberry-milk) {
+    :root {
+        --text-0: hsl(345deg 34% 25%);
+        --text-1: hsl(343deg 30% 31%);
+        --text-2: hsl(343deg 25% 40%);
+        --text-3: hsl(343deg 19% 49%);
+        --text-4: hsl(343deg 14% 58%);
+        --text-5: hsl(342deg 11% 66%);
+        --bg-1: hsl(342deg 55% 88%);
+        --bg-2: hsl(343deg 62% 92%);
+        --bg-3: hsl(344deg 71% 95%);
+        --bg-4: hsl(350deg 100% 98%);
+        --hover: hsl(338deg 76% 73% / 0.18);
+        --active: hsl(338deg 72% 68% / 0.28);
+        --active-2: hsl(338deg 66% 62% / 0.38);
+        --message-hover: hsl(338deg 74% 73% / 0.14);
+        --accent-1: hsl(336deg 63% 58%);
+        --accent-2: hsl(337deg 73% 76%);
+        --accent-3: hsl(337deg 64% 69%);
+        --accent-4: hsl(337deg 58% 62%);
+        --accent-5: hsl(337deg 52% 56%);
+        --accent-new: hsl(18deg 74% 76%);
+        --online: hsl(151deg 39% 68%);
+        --dnd: hsl(2deg 69% 74%);
+        --idle: hsl(35deg 77% 74%);
+        --streaming: hsl(279deg 43% 73%);
+        --offline: hsl(341deg 14% 62%);
+        --border-light: hsl(338deg 42% 76% / 0.24);
+        --border: hsl(338deg 39% 67% / 0.32);
+        --button-border: hsl(338deg 37% 67% / 0.28);
+        --red-1: hsl(2deg 84% 88%);
+        --red-2: hsl(2deg 75% 79%);
+        --red-3: hsl(2deg 66% 72%);
+        --red-4: hsl(2deg 57% 65%);
+        --red-5: hsl(2deg 50% 58%);
+        --green-1: hsl(152deg 43% 83%);
+        --green-2: hsl(151deg 39% 68%);
+        --green-3: hsl(151deg 35% 61%);
+        --green-4: hsl(151deg 30% 54%);
+        --green-5: hsl(151deg 26% 47%);
+        --blue-1: hsl(205deg 79% 91%);
+        --blue-2: hsl(204deg 69% 74%);
+        --blue-3: hsl(204deg 61% 66%);
+        --blue-4: hsl(204deg 52% 58%);
+        --blue-5: hsl(204deg 45% 51%);
+        --yellow-1: hsl(45deg 86% 88%);
+        --yellow-2: hsl(35deg 77% 74%);
+        --yellow-3: hsl(34deg 68% 67%);
+        --yellow-4: hsl(34deg 59% 60%);
+        --yellow-5: hsl(34deg 52% 53%);
+        --purple-1: hsl(285deg 54% 88%);
+        --purple-2: hsl(279deg 43% 73%);
+        --purple-3: hsl(277deg 38% 66%);
+        --purple-4: hsl(275deg 33% 59%);
+        --purple-5: hsl(273deg 28% 52%);
+    }
+}
+
+@container root style(--systemcinnamoroll-variant: matcha-milk) {
+    :root {
+        --text-0: hsl(142deg 21% 24%);
+        --text-1: hsl(142deg 19% 29%);
+        --text-2: hsl(142deg 17% 37%);
+        --text-3: hsl(142deg 13% 45%);
+        --text-4: hsl(142deg 10% 55%);
+        --text-5: hsl(142deg 9% 63%);
+        --bg-1: hsl(110deg 33% 86%);
+        --bg-2: hsl(111deg 39% 90%);
+        --bg-3: hsl(112deg 45% 94%);
+        --bg-4: hsl(115deg 54% 97%);
+        --hover: hsl(137deg 37% 62% / 0.18);
+        --active: hsl(137deg 34% 56% / 0.28);
+        --active-2: hsl(137deg 31% 50% / 0.36);
+        --message-hover: hsl(137deg 39% 63% / 0.14);
+        --accent-1: hsl(145deg 33% 44%);
+        --accent-2: hsl(144deg 38% 66%);
+        --accent-3: hsl(144deg 34% 59%);
+        --accent-4: hsl(144deg 30% 52%);
+        --accent-5: hsl(144deg 27% 46%);
+        --accent-new: hsl(18deg 68% 72%);
+        --online: hsl(155deg 38% 64%);
+        --dnd: hsl(5deg 62% 71%);
+        --idle: hsl(43deg 71% 71%);
+        --streaming: hsl(248deg 34% 72%);
+        --offline: hsl(142deg 10% 60%);
+        --border-light: hsl(144deg 27% 70% / 0.22);
+        --border: hsl(144deg 23% 61% / 0.3);
+        --button-border: hsl(144deg 21% 61% / 0.26);
+        --red-1: hsl(10deg 77% 86%);
+        --red-2: hsl(10deg 68% 77%);
+        --red-3: hsl(10deg 60% 69%);
+        --red-4: hsl(10deg 52% 62%);
+        --red-5: hsl(10deg 44% 55%);
+        --green-1: hsl(144deg 42% 82%);
+        --green-2: hsl(144deg 38% 66%);
+        --green-3: hsl(144deg 33% 58%);
+        --green-4: hsl(144deg 28% 51%);
+        --green-5: hsl(144deg 24% 45%);
+        --blue-1: hsl(190deg 52% 89%);
+        --blue-2: hsl(188deg 43% 73%);
+        --blue-3: hsl(187deg 37% 65%);
+        --blue-4: hsl(186deg 31% 57%);
+        --blue-5: hsl(185deg 27% 50%);
+        --yellow-1: hsl(51deg 79% 86%);
+        --yellow-2: hsl(43deg 71% 71%);
+        --yellow-3: hsl(42deg 63% 64%);
+        --yellow-4: hsl(41deg 55% 57%);
+        --yellow-5: hsl(40deg 48% 50%);
+        --purple-1: hsl(258deg 44% 86%);
+        --purple-2: hsl(248deg 34% 72%);
+        --purple-3: hsl(247deg 30% 65%);
+        --purple-4: hsl(246deg 26% 58%);
+        --purple-5: hsl(245deg 22% 51%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: cinnamoroll) {
+    body {
+        --loader-gap: 20px;
+        --loader-art:
+            '                    __                ___  __ __\A    _______  _______/ /____  ____ ___ |__ \\/ // /\A   / ___/ / / / ___/ __/ _ \\/ __ `__ \\__/ / // /_\A  (__  ) /_/ (__  ) /_/  __/ / / / / / __/__  __/\A/____/\\__, /____/\\__/\\___/_/ /_/ /_/____/ /_/   \A      /____/                                     ';
+        --loader-gradient: linear-gradient(to right, var(--brand-360) 0%, var(--background-accent) 25%, var(--background-accent) 75%, var(--brand-360) 100%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: strawberry-milk) {
+    body {
+        --loader-gap: 24px;
+        --loader-art:
+            '  _________ __                       __                           __      __\A /   _____//  |____________ __  _  _/  |__   ___________________  \\/ __ _/  |_\A \\_____  \\\\   __\\_  __ \\__  \\\\ \\/ \\/ /   __\\berry /     \\_  __ \\\\   __\\\\   __\\\A /        \\|  |  |  | \\// __ \\\\     /|  |  / /milk  |  Y Y  \\  | \\/ |  |   |  |\A/_______  /|__|  |__|  (____  /\\/\\_/ |__| /_/       |__|_|  /__|    |__|   |__|\A        \\/                  \\/                                \\/                    ';
+        --loader-gradient: linear-gradient(to right, hsl(338deg 82% 78%) 0%, hsl(12deg 88% 83%) 50%, hsl(338deg 82% 78%) 100%);
+    }
+}
+
+@container body style(--systemcinnamoroll-variant: matcha-milk) {
+    body {
+        --loader-gap: 24px;
+        --loader-art:
+            '                           __         .__               __      __\A  _____ _____ _/  |_  ____ |  |__ _____    _____   _____/  |__ _/  |_\A /     \\\\__  \\\\   __\\/ ___\\|  |  \\\\__  \\  /     \\_/ ___\\   __\\\\   __\\\A|  Y Y  \\/ __ \\|  | \\  \\___|   Y  \\/ __ \\|  Y Y  \\  \\___|  |   |  |\A|__|_|  (____  /__|  \\___  >___|  (____  /__|_|  /\\___  >__|   |__|\A      \\/     \\/          \\/     \\/     \\/      \\/     \\/              ';
+        --loader-gradient: linear-gradient(to right, hsl(144deg 34% 60%) 0%, hsl(184deg 32% 72%) 50%, hsl(144deg 34% 60%) 100%);
+    }
+}
