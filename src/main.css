@@ -223,6 +223,21 @@ body {
         background-color: var(--background-base-low) !important;
         background: var(--background-base-low) !important;
     }
+    [class*='callContainer'] [class*='background'],
+    [class*='voiceCallWrapper'] [class*='background'],
+    [class*='streamPreview'] [class*='background'],
+    [class*='streamContainer'] [class*='background'],
+    [class*='watchStream'] [class*='background'],
+    [class*='videoGrid'] [class*='background'],
+    [class*='tile'] [class*='background'],
+    [class*='videoFrame'] [class*='background'],
+    [class*='streamPreview'] > div,
+    [class*='streamContainer'] > div,
+    [class*='watchStream'] > div,
+    [class*='tile'] > div,
+    [class*='videoFrame'] > div {
+        background-color: var(--background-base-low) !important;
+    }
     [class*='callContainer'] [class*='button'],
     [class*='voiceCallWrapper'] [class*='button'] {
         color: var(--text-1) !important;
