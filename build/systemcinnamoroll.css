@@ -170,6 +170,9 @@ body {
     --background-secondary-alt: var(--bg-2);
     --background-tertiary: var(--bg-2);
     --background-floating: var(--bg-2);
+    --background-surface-high: var(--bg-3);
+    --background-surface-higher: var(--bg-3);
+    --background-surface-highest: var(--bg-2);
     --channeltextarea-background: var(--bg-3);
     --modal-background: var(--bg-2);
     --modal-footer-background: var(--bg-1);
@@ -232,11 +235,34 @@ body {
     [class*='videoGrid'] [class*='background'],
     [class*='tile'] [class*='background'],
     [class*='videoFrame'] [class*='background'],
+    [class*='streamPreview'] [class*='inner'],
+    [class*='streamContainer'] [class*='inner'],
+    [class*='watchStream'] [class*='inner'],
+    [class*='videoGrid'] [class*='inner'],
+    [class*='tile'] [class*='inner'],
+    [class*='videoFrame'] [class*='inner'],
+    [class*='streamPreview'] [class*='content'],
+    [class*='streamContainer'] [class*='content'],
+    [class*='watchStream'] [class*='content'],
+    [class*='videoGrid'] [class*='content'],
+    [class*='tile'] [class*='content'],
+    [class*='videoFrame'] [class*='content'],
     [class*='streamPreview'] > div,
     [class*='streamContainer'] > div,
     [class*='watchStream'] > div,
     [class*='tile'] > div,
     [class*='videoFrame'] > div {
+        background-color: var(--background-base-low) !important;
+        background: var(--background-base-low) !important;
+    }
+    [class*='callContainer'] video,
+    [class*='callContainer'] canvas,
+    [class*='callContainer'] [class*='video'],
+    [class*='callContainer'] [class*='media'],
+    [class*='voiceCallWrapper'] video,
+    [class*='voiceCallWrapper'] canvas,
+    [class*='voiceCallWrapper'] [class*='video'],
+    [class*='voiceCallWrapper'] [class*='media'] {
         background-color: var(--background-base-low) !important;
     }
     [class*='callContainer'] [class*='button'],
@@ -682,4 +708,3 @@ body {
         border-radius: 0 !important;
     }
 }
-
