@@ -210,9 +210,18 @@ body {
     [class*='videoGridWrapper'],
     [class*='videoGrid'],
     [class*='streamPreview'],
+    [class*='streamContainer'],
+    [class*='streamBackground'],
+    [class*='streamViewer'],
+    [class*='watchStream'],
+    [class*='sourceWrapper'],
+    [class*='tile'],
+    [class*='mediaEngine'],
+    [class*='videoFrame'],
     [class*='participantsWrapper'],
     [class*='callBackground'] {
         background-color: var(--background-base-low) !important;
+        background: var(--background-base-low) !important;
     }
     [class*='callContainer'] [class*='button'],
     [class*='voiceCallWrapper'] [class*='button'] {
