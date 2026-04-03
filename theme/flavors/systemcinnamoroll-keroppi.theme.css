@@ -14,6 +14,8 @@
 
 body {
     --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/logo/assets/keroppi.png'); /* change this one line to use your own image */
+    --loader-art:
+        " .----..-.  .-..----..---. .----..-.   .-.\A{ {__   \\ \\/ /{ {__ {_   _}| {_  |  `.'  |\A.-._} }  }  { .-._} } | |  | {__ | |\\ /| |\A`----'   `--' `----'  `-'  `----'`-' ` `-'\A.-. .-..----..----.  .----. .----. .----. .-.\A| |/ / | {_  | {}  }/  {}  \\| {}  }| {}  }| |\A| |\\ \\ | {__ | .-. \\\\      /| .--' | .--' | |\A`-' `-'`----'`-' `-' `----' `-'    `-'    `-'";
 }
 
 :root {
