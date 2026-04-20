@@ -13,7 +13,7 @@
 @import url('https://oper4nd.github.io/systemcinnamoroll/build/systemcinnamoroll.css');
 
 body {
-    --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/main/assets/cinnamoroll.jpg'); /* change this one line to use your own image */
+    --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/main/assets/hellokitty.jpeg'); /* change this one line to use your own image */
     --loader-art:
         "                                    ___\A                                   (   )\A    .--.     ___  ___      .--.     | |_       .--.    ___ .-. .-.\A  /  _  \\   (   )(   )   /  _  \\   (   __)    /    \\  (   )   '   \\\A . .' `. ;   | |  | |   . .' `. ;   | |      |  .-. ;  |  .-.  .-. ;\A | '   | |   | |  | |   | '   | |   | | ___  |  | | |  | |  | |  | |\A _\\_`.(___)  | '  | |   _\\_`.(___)  | |(   ) |  |/  |  | |  | |  | |\A(   ). '.    '  `-' |  (   ). '.    | | | |  |  ' _.'  | |  | |  | |\A | |  `\\ |    `.__. |   | |  `\\ |   | ' | |  |  .'.-.  | |  | |  | |\A ; '._,' '    ___ | |   ; '._,' '   ' `-' ;  '  `-' /  | |  | |  | |\A  '.___.'    (   )' |    '.___.'     `.__.    `.__.'  (___)(___)(___)\A              ; `-' '\A               .__.'";
 }
