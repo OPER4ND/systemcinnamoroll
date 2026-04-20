@@ -13,7 +13,7 @@
 @import url('https://oper4nd.github.io/systemcinnamoroll/build/systemcinnamoroll.css');
 
 body {
-    --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/main/assets/cinnamoroll.jpg'); /* change this one line to use your own image */
+    --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/main/assets/kuromi.jpg'); /* change this one line to use your own image */
     --loader-art:
         '  ______________.___. _______________________________   _____   \A /   _____/\\__  |   |/   _____/\\__    ___/\\_   _____/  /     \\  \A \\_____  \\  /   |   |\\_____  \\   |    |    |    __)_  /  \\ /  \\ \A /        \\ \\____   |/        \\  |    |    |        \\/    Y    \\\A/_______  / / ______/_______  /  |____|   /_______  /\\____|__  /\A        \\/  \\/              \\/                    \\/         \\/ \A ____  __.____ _____________ ________      _____  .___\A|    |/ _|    |   \\______   \\\\_____  \\    /     \\ |   |\A|      < |    |   /|       _/ /   |   \\  /  \\ /  \\|   |\A|    |  \\|    |  / |    |   \\/    |    \\/    Y    \\   |\A|____|__ \\______/  |____|_  /\\_______  /\\____|__  /___|\A        \\/                \\/         \\/         \\/';
 }
