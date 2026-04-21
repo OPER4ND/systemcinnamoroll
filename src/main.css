@@ -11,9 +11,6 @@
 }
 
 body {
-    /* variant options */
-    --systemcinnamoroll-variant: var(--systemcinnamoroll-user-variant, cinnamoroll); /* cinnamoroll, strawberry-milk, matcha-milk */
-
     /* font, change to '' for default discord font */
     --font: 'DM Mono'; /* change to '' for default discord font */
     --code-font: 'DM Mono'; /* change to '' for default discord font */

@@ -1,0 +1,52 @@
+/**
+ * @name systemcinnamoroll (my melody)
+ * @description a tui-style my melody theme
+ * @author refact0r
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/OPER4ND/systemcinnamoroll
+ * @source https://github.com/OPER4ND/systemcinnamoroll/blob/main/theme/flavors/systemcinnamoroll-my-melody.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+@import url('https://oper4nd.github.io/systemcinnamoroll/build/systemcinnamoroll.css');
+
+body {
+    --character-image: url('https://raw.githubusercontent.com/OPER4ND/systemcinnamoroll/main/assets/cinnamoroll.jpg'); /* change this one line to use your own image */
+}
+
+:root {
+    --text-0: hsl(338deg 28% 23%);
+    --text-1: hsl(338deg 24% 28%);
+    --text-2: hsl(338deg 20% 37%);
+    --text-3: hsl(338deg 17% 45%);
+    --text-4: hsl(338deg 13% 55%);
+    --text-5: hsl(338deg 10% 63%);
+
+    --bg-1: hsl(336deg 58% 87%);
+    --bg-2: hsl(336deg 66% 91%);
+    --bg-3: hsl(337deg 74% 95%);
+    --bg-4: hsl(338deg 84% 97%);
+    --hover: hsl(336deg 62% 76% / 0.2);
+    --active: hsl(336deg 58% 70% / 0.3);
+    --active-2: hsl(336deg 54% 64% / 0.4);
+    --message-hover: hsl(336deg 62% 74% / 0.16);
+
+    --accent-1: hsl(336deg 59% 57%);
+    --accent-2: #ffc8dd;
+    --accent-3: hsl(336deg 67% 78%);
+    --accent-4: hsl(336deg 60% 71%);
+    --accent-5: hsl(336deg 53% 64%);
+    --accent-new: hsl(18deg 72% 80%);
+
+    --online: hsl(152deg 36% 70%);
+    --dnd: hsl(351deg 63% 79%);
+    --idle: hsl(42deg 67% 77%);
+    --streaming: hsl(274deg 31% 74%);
+    --offline: hsl(338deg 11% 61%);
+
+    --border-light: hsl(336deg 41% 78% / 0.26);
+    --border: hsl(336deg 37% 69% / 0.34);
+    --button-border: hsl(336deg 34% 67% / 0.3);
+}
