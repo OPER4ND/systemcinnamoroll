@@ -210,6 +210,34 @@ body {
             linear-gradient(var(--chat-main-overlay), var(--chat-main-overlay)),
             var(--chat-main-image) center / cover no-repeat !important;
     }
+    [class*='callContainer'],
+    [class*='voiceCallWrapper'],
+    [class*='videoGrid'],
+    [class*='streamPreview'],
+    [class*='streamContainer'],
+    [class*='streamBackground'],
+    [class*='streamViewer'],
+    [class*='watchStream'],
+    [class*='sourceWrapper'],
+    [class*='tile'],
+    [class*='mediaEngine'],
+    [class*='videoFrame'],
+    [class*='participantsWrapper'],
+    [class*='callBackground'] {
+        outline: 2px solid rgb(255 0 128 / 0.9) !important;
+        outline-offset: -2px !important;
+    }
+    [class*='callContainer'] *,
+    [class*='voiceCallWrapper'] *,
+    [class*='videoGrid'] *,
+    [class*='streamPreview'] *,
+    [class*='streamContainer'] *,
+    [class*='watchStream'] *,
+    [class*='tile'] *,
+    [class*='videoFrame'] * {
+        outline: 1px solid rgb(0 180 255 / 0.6) !important;
+        outline-offset: -1px !important;
+    }
     .container__37e49 {
         padding: 8px;
     }
